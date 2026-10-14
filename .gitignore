@@ -1,0 +1,12 @@
+# Secrets
+Config.xcconfig
+# Xcode
+*.xcodeproj/
+xcuserdata/
+DerivedData/
+build/
+.build/
+.swiftpm/
+*.xcworkspace/xcuserdata/
+Package.resolved
+.DS_Store
