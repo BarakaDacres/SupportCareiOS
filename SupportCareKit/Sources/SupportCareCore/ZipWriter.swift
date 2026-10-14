@@ -4,7 +4,11 @@ import Foundation
 /// (one vector PDF per invoice, per AGENTS.md). PDFs are already compressed, so storing them
 /// costs little, and it avoids a third-party dependency.
 public struct ZipWriter {
-    public struct Entry { public var name: String; public var data: Data }
+    public struct Entry {
+        public var name: String
+        public var data: Data
+        public init(name: String, data: Data) { self.name = name; self.data = data }
+    }
 
     public static func archive(_ entries: [Entry], date: Date = Date()) -> Data {
         var out = Data()
