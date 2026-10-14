@@ -31,8 +31,9 @@ struct SectionHeader: View {
 
 struct StatTile: View {
     let title: String
+    enum Kind { case currency, hours, count }
     let value: Double
-    var isCurrency = true
+    var kind: Kind = .currency
     var tint: Color = Theme.primary
     var symbol: String
 
@@ -42,12 +43,15 @@ struct StatTile: View {
                 .font(.headline)
                 .foregroundStyle(tint)
                 .symbolRenderingMode(.hierarchical)
-            if isCurrency {
+            switch kind {
+            case .currency:
                 MoneyText(value: value, font: .title3.weight(.bold))
-            } else {
-                Text(MoneyFormat.hours(value))
+            case .hours, .count:
+                Text(kind == .hours ? MoneyFormat.hours(value) : "\(Int(value))")
                     .font(.title3.weight(.bold))
+                    .monospacedDigit()
                     .contentTransition(.numericText(value: value))
+                    .animation(Motion.snappy, value: value)
             }
             Text(title).font(.caption).foregroundStyle(.secondary)
         }
