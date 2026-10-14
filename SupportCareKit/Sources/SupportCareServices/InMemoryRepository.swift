@@ -20,6 +20,11 @@ public actor InMemoryRepository: DataRepository {
         return repo
     }
 
+    /// Seeds sample data unless this user already has some.
+    public func seedIfEmpty(userId: UUID) {
+        if settings[userId] == nil { seed(userId: userId) }
+    }
+
     func seed(userId: UUID) {
         var s = UserSettings(userId: userId)
         s.businessName = "Baraka Support Services"

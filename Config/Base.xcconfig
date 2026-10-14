@@ -1,0 +1,9 @@
+// Committed defaults. Your real values go in Config.xcconfig (gitignored), which is included below.
+AUTH_REDIRECT_SCHEME = supportcare
+SUPABASE_URL =
+SUPABASE_PUBLISHABLE_KEY =
+GOOGLE_IOS_CLIENT_ID =
+GOOGLE_WEB_CLIENT_ID =
+GOOGLE_REVERSED_CLIENT_ID = com.googleusercontent.apps.unset
+
+#include? "Config.xcconfig"

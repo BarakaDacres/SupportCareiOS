@@ -9,6 +9,11 @@ public enum AuthEvent: Sendable, Equatable {
     case passwordRecovery(userId: UUID)
 }
 
+public enum DeepLinkResult: Sendable, Equatable {
+    case notAuth, signedIn, passwordRecovery
+    case failed(String)
+}
+
 public protocol AuthServicing: Sendable {
     var events: AsyncStream<AuthEvent> { get }
     func signIn(email: String, password: String) async throws
@@ -18,8 +23,8 @@ public protocol AuthServicing: Sendable {
     func updatePassword(_ newPassword: String) async throws
     func signInWithApple(idToken: String, nonce: String, fullName: String?) async throws
     func signInWithGoogle(idToken: String, accessToken: String?) async throws
-    /// Handles supportcare:// deep links (PKCE code exchange). Returns true if it was an auth link.
-    func handle(url: URL) async -> Bool
+    /// Handles supportcare:// deep links (PKCE code exchange).
+    func handle(url: URL) async -> DeepLinkResult
     func signOut() async throws
 }
 
@@ -92,13 +97,14 @@ public final class SupabaseAuthService: AuthServicing {
         UserDefaults.standard.set("google", forKey: "last_auth_provider")
     }
 
-    public func handle(url: URL) async -> Bool {
-        guard url.scheme == config.redirectScheme else { return false }
+    public func handle(url: URL) async -> DeepLinkResult {
+        guard url.scheme == config.redirectScheme else { return .notAuth }
         do {
             _ = try await client.auth.session(from: url)
-            return true
+            // With PKCE, Supabase doesn't emit PASSWORD_RECOVERY, so the link's host decides.
+            return url.host == "reset-password" ? .passwordRecovery : .signedIn
         } catch {
-            return false
+            return .failed(error.localizedDescription)
         }
     }
 

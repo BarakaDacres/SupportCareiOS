@@ -1,0 +1,19 @@
+// Copy to Config/Config.xcconfig (gitignored) and fill in.
+//
+// IMPORTANT: xcconfig treats "//" as a comment, so URLs must be written with $() between the slashes:
+//   https:/$()/abcd.supabase.co
+//
+// The Supabase "publishable"/anon key is a public client key (RLS protects the data). It is
+// still kept out of git so you can rotate it or point at another project. NEVER put the
+// service_role key here.
+
+SUPABASE_URL = https:/$()/YOUR-PROJECT-REF.supabase.co
+SUPABASE_PUBLISHABLE_KEY = YOUR_PUBLISHABLE_OR_ANON_KEY
+
+// Google Sign-In (Google Cloud console → Credentials)
+GOOGLE_IOS_CLIENT_ID = 1234567890-abcdefg.apps.googleusercontent.com
+GOOGLE_WEB_CLIENT_ID = 1234567890-webclient.apps.googleusercontent.com
+GOOGLE_REVERSED_CLIENT_ID = com.googleusercontent.apps.1234567890-abcdefg
+
+// Optional: set your Apple team here instead of in Xcode
+// DEVELOPMENT_TEAM = ABCDE12345

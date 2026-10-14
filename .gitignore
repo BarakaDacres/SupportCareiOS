@@ -1,5 +1,5 @@
 # Secrets
-Config.xcconfig
+Config/Config.xcconfig
 # Xcode
 *.xcodeproj/
 xcuserdata/

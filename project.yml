@@ -1,0 +1,133 @@
+name: SupportCare
+options:
+  bundleIdPrefix: com.barakadacres
+  deploymentTarget:
+    iOS: "26.0"
+  xcodeVersion: "26.0"
+  createIntermediateGroups: true
+  developmentLanguage: en-AU
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    DEVELOPMENT_TEAM: ""          # set your Team ID (or pick it in Xcode > Signing)
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+    APP_GROUP: group.com.barakadacres.supportcare
+configs:
+  Debug: debug
+  Release: release
+configFiles:
+  Debug: Config/Base.xcconfig
+  Release: Config/Base.xcconfig
+
+packages:
+  SupportCareKit:
+    path: SupportCareKit
+  GoogleSignIn:
+    url: https://github.com/google/GoogleSignIn-iOS
+    from: "9.0.0"
+
+targets:
+  SupportCare:
+    type: application
+    platform: iOS
+    sources:
+      - path: SupportCare
+    dependencies:
+      - package: SupportCareKit
+        product: SupportCareCore
+      - package: SupportCareKit
+        product: SupportCareServices
+      - package: GoogleSignIn
+        product: GoogleSignIn
+      - target: SupportCareWidget
+        embed: true
+      - sdk: Charts.framework
+    entitlements:
+      path: SupportCare/SupportCare.entitlements
+      properties:
+        com.apple.developer.applesignin: [Default]
+        com.apple.security.application-groups: [$(APP_GROUP)]
+    info:
+      path: SupportCare/Info.plist
+      properties:
+        CFBundleDisplayName: Support Care
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        UISupportedInterfaceOrientations~ipad:
+          [UIInterfaceOrientationPortrait, UIInterfaceOrientationPortraitUpsideDown,
+           UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
+        ITSAppUsesNonExemptEncryption: false
+        NSCalendarsWriteOnlyAccessUsageDescription: Support Care adds your shifts to your calendar.
+        NSPhotoLibraryUsageDescription: Choose a profile photo.
+        SUPABASE_URL: $(SUPABASE_URL)
+        SUPABASE_PUBLISHABLE_KEY: $(SUPABASE_PUBLISHABLE_KEY)
+        AUTH_REDIRECT_SCHEME: $(AUTH_REDIRECT_SCHEME)
+        APP_GROUP: $(APP_GROUP)
+        GIDClientID: $(GOOGLE_IOS_CLIENT_ID)
+        GIDServerClientID: $(GOOGLE_WEB_CLIENT_ID)
+        CFBundleURLTypes:
+          - CFBundleURLName: auth
+            CFBundleURLSchemes: [$(AUTH_REDIRECT_SCHEME)]
+          - CFBundleURLName: google
+            CFBundleURLSchemes: [$(GOOGLE_REVERSED_CLIENT_ID)]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.barakadacres.supportcare
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        TARGETED_DEVICE_FAMILY: "1,2"
+        ENABLE_PREVIEWS: YES
+    scheme:
+      testTargets: [SupportCareTests, SupportCareUITests]
+      gatherCoverageData: true
+
+  SupportCareWidget:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: SupportCareWidget
+      - path: SupportCare/Services/WidgetSnapshot.swift
+    dependencies:
+      - package: SupportCareKit
+        product: SupportCareCore
+      - sdk: WidgetKit.framework
+      - sdk: SwiftUI.framework
+    entitlements:
+      path: SupportCareWidget/SupportCareWidget.entitlements
+      properties:
+        com.apple.security.application-groups: [$(APP_GROUP)]
+    info:
+      path: SupportCareWidget/Info.plist
+      properties:
+        CFBundleDisplayName: Support Care
+        APP_GROUP: $(APP_GROUP)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.barakadacres.supportcare.widget
+
+  SupportCareTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [SupportCareTests]
+    dependencies:
+      - target: SupportCare
+      - package: SupportCareKit
+        product: SupportCareCore
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+
+  SupportCareUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources: [SupportCareUITests]
+    dependencies:
+      - target: SupportCare
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_TARGET_NAME: SupportCare
