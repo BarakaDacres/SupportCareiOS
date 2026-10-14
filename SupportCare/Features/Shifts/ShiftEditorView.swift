@@ -180,7 +180,8 @@ private struct ShiftEditorContent: View {
             }
 
             Section("Breakdown") {
-                ForEach(Array(calc.breakdown.enumerated()), id: \.offset) { _, line in
+                ForEach(Array(calc.breakdown.enumerated()), id: \.offset) { item in
+                    let line = item.element
                     HStack {
                         VStack(alignment: .leading) {
                             Text(line.label).font(.subheadline)

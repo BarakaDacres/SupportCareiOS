@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 import SupportCareCore
 
 enum ShiftFilter: String, CaseIterable, Identifiable {

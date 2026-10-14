@@ -91,7 +91,7 @@ struct ClientRow: View {
     }
 
     private var initials: String {
-        client.shownName.split(separator: " ").prefix(2).compactMap(\.first).map(String.init).joined().uppercased()
+        client.shownName.split(separator: " ").prefix(2).compactMap(\.first).map { String($0) }.joined().uppercased()
     }
     private var color: Color {
         let palette = [Theme.primary, Theme.purple, Theme.evening, Theme.money, Theme.sleepover, Theme.weekend]

@@ -1,5 +1,5 @@
 import Foundation
-import UserNotifications
+@preconcurrency import UserNotifications
 import SupportCareCore
 
 /// Local notifications: a reminder 1 hour before each upcoming shift (next 14 days) and

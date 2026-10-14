@@ -8,7 +8,9 @@ options:
   developmentLanguage: en-AU
 settings:
   base:
-    SWIFT_VERSION: "6.0"
+    # App targets use the Swift 5 language mode with complete concurrency checking, so data-race
+    # diagnostics from Apple SDK types show as warnings. SupportCareKit builds in Swift 6 mode.
+    SWIFT_VERSION: "5.0"
     SWIFT_STRICT_CONCURRENCY: complete
     DEVELOPMENT_TEAM: ""          # set your Team ID (or pick it in Xcode > Signing)
     MARKETING_VERSION: "1.0.0"

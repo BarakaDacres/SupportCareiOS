@@ -56,7 +56,7 @@ struct InvoiceBuilderView: View {
                         DatePicker(kind == .week ? "Week containing" : "Month containing", selection: $anchor, displayedComponents: .date)
                     case .fortnight:
                         Picker("Fortnight", selection: $fortnightIndex) {
-                            ForEach(Array(fortnights.enumerated()), id: \.offset) { i, f in Text(f.label).tag(i) }
+                            ForEach(Array(fortnights.enumerated()), id: \.offset) { item in Text(item.element.label).tag(item.offset) }
                         }
                     case .custom:
                         DatePicker("From", selection: $customStart, displayedComponents: .date)

@@ -28,11 +28,13 @@ final class AppModel {
     private(set) var store: DataStore?
     private var started = false
     private var recoveryPending = false
+    private let configError: String?
 
     init(auth: AuthServicing, repository: DataRepository, config: SupabaseConfig?, configError: String? = nil) {
         self.auth = auth
         self.repository = repository
         self.config = config
+        self.configError = configError
         if let configError { phase = .misconfigured(configError) }
     }
 
@@ -70,7 +72,7 @@ final class AppModel {
         switch event {
         case .signedOut:
             userId = nil; email = nil; store = nil
-            phase = .signedOut
+            phase = configError.map { .misconfigured($0) } ?? .signedOut
         case .passwordRecovery(let uid):
             userId = uid
             phase = .passwordRecovery

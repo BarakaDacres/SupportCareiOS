@@ -1,5 +1,6 @@
 import PhotosUI
 import SwiftUI
+import UIKit
 import SupportCareCore
 
 /// Profile tab with the web app's four sub-tabs (Prefs · Rates · Analytics · Account),
