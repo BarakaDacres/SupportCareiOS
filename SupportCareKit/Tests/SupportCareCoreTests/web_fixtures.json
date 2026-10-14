@@ -1,0 +1,1368 @@
+{
+ "pay": [
+  {
+   "input": [
+    "2026-10-14",
+    "09:00",
+    "17:00",
+    false,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 8,
+    "grossPay": 480,
+    "breakdown": [
+     {
+      "label": "Wed 2026-10-14",
+      "hours": 8,
+      "rate": 60,
+      "amount": 480
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-14",
+    "15:00",
+    "21:00",
+    false,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 6,
+    "grossPay": 405,
+    "breakdown": [
+     {
+      "label": "Wed 2026-10-14",
+      "hours": 3,
+      "rate": 60,
+      "amount": 180
+     },
+     {
+      "label": "Wed 2026-10-14 (Evening)",
+      "hours": 3,
+      "rate": 75,
+      "amount": 225
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-14",
+    "20:00",
+    "02:00",
+    false,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 6,
+    "grossPay": 420,
+    "breakdown": [
+     {
+      "label": "Wed 2026-10-14 (Evening)",
+      "hours": 4,
+      "rate": 75,
+      "amount": 300
+     },
+     {
+      "label": "Thu 2026-10-15",
+      "hours": 2,
+      "rate": 60,
+      "amount": 120
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-16",
+    "20:00",
+    "02:00",
+    false,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 6,
+    "grossPay": 450,
+    "breakdown": [
+     {
+      "label": "Fri 2026-10-16 (Evening)",
+      "hours": 4,
+      "rate": 75,
+      "amount": 300
+     },
+     {
+      "label": "Sat 2026-10-17",
+      "hours": 2,
+      "rate": 75,
+      "amount": 150
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-17",
+    "10:00",
+    "20:00",
+    false,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 10,
+    "grossPay": 750,
+    "breakdown": [
+     {
+      "label": "Sat 2026-10-17",
+      "hours": 8,
+      "rate": 75,
+      "amount": 600
+     },
+     {
+      "label": "Sat 2026-10-17 (Evening)",
+      "hours": 2,
+      "rate": 75,
+      "amount": 150
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-18",
+    "22:00",
+    "08:00",
+    false,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 10,
+    "grossPay": 660,
+    "breakdown": [
+     {
+      "label": "Sun 2026-10-18 (Evening)",
+      "hours": 2,
+      "rate": 90,
+      "amount": 180
+     },
+     {
+      "label": "Mon 2026-10-19",
+      "hours": 8,
+      "rate": 60,
+      "amount": 480
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-14",
+    "09:00",
+    "17:00",
+    false,
+    true,
+    false
+   ],
+   "result": {
+    "hoursWorked": 8,
+    "grossPay": 1200,
+    "breakdown": [
+     {
+      "label": "Public Holiday 2026-10-14",
+      "hours": 8,
+      "rate": 150,
+      "amount": 1200
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-14",
+    "09:00",
+    "17:00",
+    false,
+    false,
+    true
+   ],
+   "result": {
+    "hoursWorked": 8,
+    "grossPay": 720,
+    "breakdown": [
+     {
+      "label": "Overtime 2026-10-14",
+      "hours": 8,
+      "rate": 90,
+      "amount": 720
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-14",
+    "22:00",
+    "06:00",
+    true,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 8,
+    "grossPay": 300,
+    "breakdown": [
+     {
+      "label": "Weekday Sleepover",
+      "amount": 300
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-17",
+    "22:00",
+    "06:00",
+    true,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 8,
+    "grossPay": 350,
+    "breakdown": [
+     {
+      "label": "Weekend Sleepover",
+      "amount": 350
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-18",
+    "22:00",
+    "06:00",
+    true,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 8,
+    "grossPay": 350,
+    "breakdown": [
+     {
+      "label": "Weekend Sleepover",
+      "amount": 350
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-12-25",
+    "22:00",
+    "06:00",
+    true,
+    true,
+    false
+   ],
+   "result": {
+    "hoursWorked": 8,
+    "grossPay": 400,
+    "breakdown": [
+     {
+      "label": "Public Holiday Sleepover",
+      "amount": 400
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-14",
+    "22:00",
+    "07:30",
+    true,
+    false,
+    true
+   ],
+   "result": {
+    "hoursWorked": 9.5,
+    "grossPay": 855,
+    "breakdown": [
+     {
+      "label": "Overtime Sleepover",
+      "hours": 9.5,
+      "rate": 90,
+      "amount": 855
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-14",
+    "08:00",
+    "08:00",
+    false,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 24,
+    "grossPay": 1530,
+    "breakdown": [
+     {
+      "label": "Wed 2026-10-14",
+      "hours": 10,
+      "rate": 60,
+      "amount": 600
+     },
+     {
+      "label": "Wed 2026-10-14 (Evening)",
+      "hours": 6,
+      "rate": 75,
+      "amount": 450
+     },
+     {
+      "label": "Thu 2026-10-15",
+      "hours": 8,
+      "rate": 60,
+      "amount": 480
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-14",
+    "17:45",
+    "18:15",
+    false,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 0.5,
+    "grossPay": 33.75,
+    "breakdown": [
+     {
+      "label": "Wed 2026-10-14",
+      "hours": 0.25,
+      "rate": 60,
+      "amount": 15
+     },
+     {
+      "label": "Wed 2026-10-14 (Evening)",
+      "hours": 0.25,
+      "rate": 75,
+      "amount": 18.75
+     }
+    ]
+   }
+  }
+ ],
+ "payCustomWindow": [
+  {
+   "input": [
+    "2026-10-14",
+    "09:00",
+    "17:00",
+    false,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 8,
+    "grossPay": 480,
+    "breakdown": [
+     {
+      "label": "Wed 2026-10-14",
+      "hours": 8,
+      "rate": 60,
+      "amount": 480
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-14",
+    "15:00",
+    "21:00",
+    false,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 6,
+    "grossPay": 405,
+    "breakdown": [
+     {
+      "label": "Wed 2026-10-14",
+      "hours": 3,
+      "rate": 60,
+      "amount": 180
+     },
+     {
+      "label": "Wed 2026-10-14 (Evening)",
+      "hours": 3,
+      "rate": 75,
+      "amount": 225
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-14",
+    "20:00",
+    "02:00",
+    false,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 6,
+    "grossPay": 390,
+    "breakdown": [
+     {
+      "label": "Wed 2026-10-14 (Evening)",
+      "hours": 2,
+      "rate": 75,
+      "amount": 150
+     },
+     {
+      "label": "Wed 2026-10-14",
+      "hours": 2,
+      "rate": 60,
+      "amount": 120
+     },
+     {
+      "label": "Thu 2026-10-15",
+      "hours": 2,
+      "rate": 60,
+      "amount": 120
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-16",
+    "20:00",
+    "02:00",
+    false,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 6,
+    "grossPay": 420,
+    "breakdown": [
+     {
+      "label": "Fri 2026-10-16 (Evening)",
+      "hours": 2,
+      "rate": 75,
+      "amount": 150
+     },
+     {
+      "label": "Fri 2026-10-16",
+      "hours": 2,
+      "rate": 60,
+      "amount": 120
+     },
+     {
+      "label": "Sat 2026-10-17",
+      "hours": 2,
+      "rate": 75,
+      "amount": 150
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-17",
+    "10:00",
+    "20:00",
+    false,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 10,
+    "grossPay": 750,
+    "breakdown": [
+     {
+      "label": "Sat 2026-10-17",
+      "hours": 8,
+      "rate": 75,
+      "amount": 600
+     },
+     {
+      "label": "Sat 2026-10-17 (Evening)",
+      "hours": 2,
+      "rate": 75,
+      "amount": 150
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-18",
+    "22:00",
+    "08:00",
+    false,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 10,
+    "grossPay": 660,
+    "breakdown": [
+     {
+      "label": "Sun 2026-10-18",
+      "hours": 2,
+      "rate": 90,
+      "amount": 180
+     },
+     {
+      "label": "Mon 2026-10-19",
+      "hours": 8,
+      "rate": 60,
+      "amount": 480
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-14",
+    "09:00",
+    "17:00",
+    false,
+    true,
+    false
+   ],
+   "result": {
+    "hoursWorked": 8,
+    "grossPay": 1200,
+    "breakdown": [
+     {
+      "label": "Public Holiday 2026-10-14",
+      "hours": 8,
+      "rate": 150,
+      "amount": 1200
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-14",
+    "09:00",
+    "17:00",
+    false,
+    false,
+    true
+   ],
+   "result": {
+    "hoursWorked": 8,
+    "grossPay": 720,
+    "breakdown": [
+     {
+      "label": "Overtime 2026-10-14",
+      "hours": 8,
+      "rate": 90,
+      "amount": 720
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-14",
+    "22:00",
+    "06:00",
+    true,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 8,
+    "grossPay": 300,
+    "breakdown": [
+     {
+      "label": "Weekday Sleepover",
+      "amount": 300
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-17",
+    "22:00",
+    "06:00",
+    true,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 8,
+    "grossPay": 350,
+    "breakdown": [
+     {
+      "label": "Weekend Sleepover",
+      "amount": 350
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-18",
+    "22:00",
+    "06:00",
+    true,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 8,
+    "grossPay": 350,
+    "breakdown": [
+     {
+      "label": "Weekend Sleepover",
+      "amount": 350
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-12-25",
+    "22:00",
+    "06:00",
+    true,
+    true,
+    false
+   ],
+   "result": {
+    "hoursWorked": 8,
+    "grossPay": 400,
+    "breakdown": [
+     {
+      "label": "Public Holiday Sleepover",
+      "amount": 400
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-14",
+    "22:00",
+    "07:30",
+    true,
+    false,
+    true
+   ],
+   "result": {
+    "hoursWorked": 9.5,
+    "grossPay": 855,
+    "breakdown": [
+     {
+      "label": "Overtime Sleepover",
+      "hours": 9.5,
+      "rate": 90,
+      "amount": 855
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-14",
+    "08:00",
+    "08:00",
+    false,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 24,
+    "grossPay": 1500,
+    "breakdown": [
+     {
+      "label": "Wed 2026-10-14",
+      "hours": 10,
+      "rate": 60,
+      "amount": 600
+     },
+     {
+      "label": "Wed 2026-10-14 (Evening)",
+      "hours": 4,
+      "rate": 75,
+      "amount": 300
+     },
+     {
+      "label": "Wed 2026-10-14",
+      "hours": 2,
+      "rate": 60,
+      "amount": 120
+     },
+     {
+      "label": "Thu 2026-10-15",
+      "hours": 8,
+      "rate": 60,
+      "amount": 480
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-14",
+    "17:45",
+    "18:15",
+    false,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 0.5,
+    "grossPay": 33.75,
+    "breakdown": [
+     {
+      "label": "Wed 2026-10-14",
+      "hours": 0.25,
+      "rate": 60,
+      "amount": 15
+     },
+     {
+      "label": "Wed 2026-10-14 (Evening)",
+      "hours": 0.25,
+      "rate": 75,
+      "amount": 18.75
+     }
+    ]
+   }
+  }
+ ],
+ "payCustomRates": [
+  {
+   "input": [
+    "2026-10-14",
+    "09:00",
+    "17:00",
+    false,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 8,
+    "grossPay": 523.76,
+    "breakdown": [
+     {
+      "label": "Wed 2026-10-14",
+      "hours": 8,
+      "rate": 65.47,
+      "amount": 523.76
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-14",
+    "15:00",
+    "21:00",
+    false,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 6,
+    "grossPay": 412.65,
+    "breakdown": [
+     {
+      "label": "Wed 2026-10-14",
+      "hours": 3,
+      "rate": 65.47,
+      "amount": 196.41
+     },
+     {
+      "label": "Wed 2026-10-14 (Evening)",
+      "hours": 3,
+      "rate": 72.08,
+      "amount": 216.24
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-14",
+    "20:00",
+    "02:00",
+    false,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 6,
+    "grossPay": 419.26,
+    "breakdown": [
+     {
+      "label": "Wed 2026-10-14 (Evening)",
+      "hours": 4,
+      "rate": 72.08,
+      "amount": 288.32
+     },
+     {
+      "label": "Thu 2026-10-15",
+      "hours": 2,
+      "rate": 65.47,
+      "amount": 130.94
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-16",
+    "20:00",
+    "02:00",
+    false,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 6,
+    "grossPay": 472.56,
+    "breakdown": [
+     {
+      "label": "Fri 2026-10-16 (Evening)",
+      "hours": 4,
+      "rate": 72.08,
+      "amount": 288.32
+     },
+     {
+      "label": "Sat 2026-10-17",
+      "hours": 2,
+      "rate": 92.12,
+      "amount": 184.24
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-17",
+    "10:00",
+    "20:00",
+    false,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 10,
+    "grossPay": 921.2,
+    "breakdown": [
+     {
+      "label": "Sat 2026-10-17",
+      "hours": 8,
+      "rate": 92.12,
+      "amount": 736.96
+     },
+     {
+      "label": "Sat 2026-10-17 (Evening)",
+      "hours": 2,
+      "rate": 92.12,
+      "amount": 184.24
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-18",
+    "22:00",
+    "08:00",
+    false,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 10,
+    "grossPay": 761.3,
+    "breakdown": [
+     {
+      "label": "Sun 2026-10-18 (Evening)",
+      "hours": 2,
+      "rate": 118.77,
+      "amount": 237.54
+     },
+     {
+      "label": "Mon 2026-10-19",
+      "hours": 8,
+      "rate": 65.47,
+      "amount": 523.76
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-14",
+    "09:00",
+    "17:00",
+    false,
+    true,
+    false
+   ],
+   "result": {
+    "hoursWorked": 8,
+    "grossPay": 1200,
+    "breakdown": [
+     {
+      "label": "Public Holiday 2026-10-14",
+      "hours": 8,
+      "rate": 150,
+      "amount": 1200
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-14",
+    "09:00",
+    "17:00",
+    false,
+    false,
+    true
+   ],
+   "result": {
+    "hoursWorked": 8,
+    "grossPay": 720,
+    "breakdown": [
+     {
+      "label": "Overtime 2026-10-14",
+      "hours": 8,
+      "rate": 90,
+      "amount": 720
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-14",
+    "22:00",
+    "06:00",
+    true,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 8,
+    "grossPay": 300,
+    "breakdown": [
+     {
+      "label": "Weekday Sleepover",
+      "amount": 300
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-17",
+    "22:00",
+    "06:00",
+    true,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 8,
+    "grossPay": 350,
+    "breakdown": [
+     {
+      "label": "Weekend Sleepover",
+      "amount": 350
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-18",
+    "22:00",
+    "06:00",
+    true,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 8,
+    "grossPay": 350,
+    "breakdown": [
+     {
+      "label": "Weekend Sleepover",
+      "amount": 350
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-12-25",
+    "22:00",
+    "06:00",
+    true,
+    true,
+    false
+   ],
+   "result": {
+    "hoursWorked": 8,
+    "grossPay": 400,
+    "breakdown": [
+     {
+      "label": "Public Holiday Sleepover",
+      "amount": 400
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-14",
+    "22:00",
+    "07:30",
+    true,
+    false,
+    true
+   ],
+   "result": {
+    "hoursWorked": 9.5,
+    "grossPay": 855,
+    "breakdown": [
+     {
+      "label": "Overtime Sleepover",
+      "hours": 9.5,
+      "rate": 90,
+      "amount": 855
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-14",
+    "08:00",
+    "08:00",
+    false,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 24,
+    "grossPay": 1610.94,
+    "breakdown": [
+     {
+      "label": "Wed 2026-10-14",
+      "hours": 10,
+      "rate": 65.47,
+      "amount": 654.7
+     },
+     {
+      "label": "Wed 2026-10-14 (Evening)",
+      "hours": 6,
+      "rate": 72.08,
+      "amount": 432.48
+     },
+     {
+      "label": "Thu 2026-10-15",
+      "hours": 8,
+      "rate": 65.47,
+      "amount": 523.76
+     }
+    ]
+   }
+  },
+  {
+   "input": [
+    "2026-10-14",
+    "17:45",
+    "18:15",
+    false,
+    false,
+    false
+   ],
+   "result": {
+    "hoursWorked": 0.5,
+    "grossPay": 34.39,
+    "breakdown": [
+     {
+      "label": "Wed 2026-10-14",
+      "hours": 0.25,
+      "rate": 65.47,
+      "amount": 16.37
+     },
+     {
+      "label": "Wed 2026-10-14 (Evening)",
+      "hours": 0.25,
+      "rate": 72.08,
+      "amount": 18.02
+     }
+    ]
+   }
+  }
+ ],
+ "invoice": [
+  {
+   "category": "daily",
+   "quantity": 39.25,
+   "totalHours": 39.25,
+   "rate": 60,
+   "subtotal": 2375,
+   "shiftCount": 6
+  },
+  {
+   "category": "evening",
+   "quantity": 17.25,
+   "totalHours": 17.25,
+   "rate": 75,
+   "subtotal": 1293.75,
+   "shiftCount": 5
+  },
+  {
+   "category": "saturday",
+   "quantity": 12,
+   "totalHours": 12,
+   "rate": 75,
+   "subtotal": 900,
+   "shiftCount": 2
+  },
+  {
+   "category": "sunday",
+   "quantity": 2,
+   "totalHours": 2,
+   "rate": 90,
+   "subtotal": 180,
+   "shiftCount": 1
+  },
+  {
+   "category": "weekday_sleepover",
+   "quantity": 1,
+   "totalHours": 0,
+   "rate": 300,
+   "subtotal": 300,
+   "shiftCount": 1
+  },
+  {
+   "category": "saturday_sleepover",
+   "quantity": 1,
+   "totalHours": 0,
+   "rate": 350,
+   "subtotal": 350,
+   "shiftCount": 1
+  },
+  {
+   "category": "sunday_sleepover",
+   "quantity": 1,
+   "totalHours": 0,
+   "rate": 350,
+   "subtotal": 420,
+   "shiftCount": 1
+  },
+  {
+   "category": "public_holiday",
+   "quantity": 8,
+   "totalHours": 8,
+   "rate": 150,
+   "subtotal": 1200,
+   "shiftCount": 1
+  },
+  {
+   "category": "public_holiday_sleepover",
+   "quantity": 1,
+   "totalHours": 0,
+   "rate": 400,
+   "subtotal": 400,
+   "shiftCount": 1
+  }
+ ],
+ "invoiceShifts": [
+  {
+   "id": "00000000-0000-0000-0000-000000000000",
+   "date": "2026-10-14",
+   "start_time": "09:00",
+   "end_time": "17:00",
+   "is_sleepover": false,
+   "is_public_holiday": false,
+   "is_overtime": false,
+   "gross_pay": 480,
+   "hours_worked": 8,
+   "fee_override": 500
+  },
+  {
+   "id": "00000000-0000-0000-0000-000000000001",
+   "date": "2026-10-14",
+   "start_time": "15:00",
+   "end_time": "21:00",
+   "is_sleepover": false,
+   "is_public_holiday": false,
+   "is_overtime": false,
+   "gross_pay": 405,
+   "hours_worked": 6,
+   "fee_override": null
+  },
+  {
+   "id": "00000000-0000-0000-0000-000000000002",
+   "date": "2026-10-14",
+   "start_time": "20:00",
+   "end_time": "02:00",
+   "is_sleepover": false,
+   "is_public_holiday": false,
+   "is_overtime": false,
+   "gross_pay": 420,
+   "hours_worked": 6,
+   "fee_override": null
+  },
+  {
+   "id": "00000000-0000-0000-0000-000000000003",
+   "date": "2026-10-16",
+   "start_time": "20:00",
+   "end_time": "02:00",
+   "is_sleepover": false,
+   "is_public_holiday": false,
+   "is_overtime": false,
+   "gross_pay": 450,
+   "hours_worked": 6,
+   "fee_override": null
+  },
+  {
+   "id": "00000000-0000-0000-0000-000000000004",
+   "date": "2026-10-17",
+   "start_time": "10:00",
+   "end_time": "20:00",
+   "is_sleepover": false,
+   "is_public_holiday": false,
+   "is_overtime": false,
+   "gross_pay": 750,
+   "hours_worked": 10,
+   "fee_override": null
+  },
+  {
+   "id": "00000000-0000-0000-0000-000000000005",
+   "date": "2026-10-18",
+   "start_time": "22:00",
+   "end_time": "08:00",
+   "is_sleepover": false,
+   "is_public_holiday": false,
+   "is_overtime": false,
+   "gross_pay": 660,
+   "hours_worked": 10,
+   "fee_override": null
+  },
+  {
+   "id": "00000000-0000-0000-0000-000000000006",
+   "date": "2026-10-14",
+   "start_time": "09:00",
+   "end_time": "17:00",
+   "is_sleepover": false,
+   "is_public_holiday": true,
+   "is_overtime": false,
+   "gross_pay": 1200,
+   "hours_worked": 8,
+   "fee_override": null
+  },
+  {
+   "id": "00000000-0000-0000-0000-000000000007",
+   "date": "2026-10-14",
+   "start_time": "22:00",
+   "end_time": "06:00",
+   "is_sleepover": true,
+   "is_public_holiday": false,
+   "is_overtime": false,
+   "gross_pay": 300,
+   "hours_worked": 8,
+   "fee_override": null
+  },
+  {
+   "id": "00000000-0000-0000-0000-000000000008",
+   "date": "2026-10-17",
+   "start_time": "22:00",
+   "end_time": "06:00",
+   "is_sleepover": true,
+   "is_public_holiday": false,
+   "is_overtime": false,
+   "gross_pay": 350,
+   "hours_worked": 8,
+   "fee_override": null
+  },
+  {
+   "id": "00000000-0000-0000-0000-000000000009",
+   "date": "2026-10-18",
+   "start_time": "22:00",
+   "end_time": "06:00",
+   "is_sleepover": true,
+   "is_public_holiday": false,
+   "is_overtime": false,
+   "gross_pay": 350,
+   "hours_worked": 8,
+   "fee_override": 420
+  },
+  {
+   "id": "00000000-0000-0000-0000-000000000010",
+   "date": "2026-12-25",
+   "start_time": "22:00",
+   "end_time": "06:00",
+   "is_sleepover": true,
+   "is_public_holiday": true,
+   "is_overtime": false,
+   "gross_pay": 400,
+   "hours_worked": 8,
+   "fee_override": null
+  },
+  {
+   "id": "00000000-0000-0000-0000-000000000011",
+   "date": "2026-10-14",
+   "start_time": "08:00",
+   "end_time": "08:00",
+   "is_sleepover": false,
+   "is_public_holiday": false,
+   "is_overtime": false,
+   "gross_pay": 1530,
+   "hours_worked": 24,
+   "fee_override": null
+  },
+  {
+   "id": "00000000-0000-0000-0000-000000000012",
+   "date": "2026-10-14",
+   "start_time": "17:45",
+   "end_time": "18:15",
+   "is_sleepover": false,
+   "is_public_holiday": false,
+   "is_overtime": false,
+   "gross_pay": 33.75,
+   "hours_worked": 0.5,
+   "fee_override": null
+  }
+ ]
+}
