@@ -143,3 +143,42 @@ import Testing
         #expect(cal.suggestsPublicHoliday(for: CivilDate("2026-12-25")!, state: .qld, enabled: false) == false)
     }
 }
+
+@Suite struct ExportTests {
+    @Test func crc32KnownValue() {
+        #expect(CRC32.checksum(Data("123456789".utf8)) == 0xCBF4_3926)
+    }
+
+    @Test func zipStructure() {
+        let zip = ZipWriter.archive([.init(name: "a.pdf", data: Data("hello".utf8)), .init(name: "a.pdf", data: Data("x".utf8))])
+        #expect(zip.prefix(4) == Data([0x50, 0x4B, 0x03, 0x04]))
+        #expect(zip.suffix(22).prefix(4) == Data([0x50, 0x4B, 0x05, 0x06]))
+        #expect(String(decoding: zip, as: UTF8.self).contains("a (2).pdf"))
+    }
+
+    @Test func icsOvernight() {
+        let e = CalendarEvent(uid: "x", title: "Sleepover, Jo", date: CivilDate("2026-10-14")!, start: TimeOfDay(hour: 22), end: TimeOfDay(hour: 6))
+        let s = ICS.calendar([e])
+        #expect(s.contains("DTSTART:20261014T220000"))
+        #expect(s.contains("DTEND:20261015T060000"))
+        #expect(s.contains("SUMMARY:Sleepover\\, Jo"))
+    }
+
+    @Test func invoiceDocument() {
+        let u = UUID()
+        var settings = UserSettings(userId: u)
+        settings.businessName = "Acme Care"; settings.bsb = "062-000"; settings.invoiceDueDays = 14
+        var client = Client(userId: u, name: "Jo")
+        client.useCustomRates = true; client.rateWeekday = 70
+        var shift = Shift(userId: u, clientId: client.id, date: CivilDate("2026-10-14")!, startTime: TimeOfDay(hour: 9), endTime: TimeOfDay(hour: 17))
+        shift.recalculate(rates: .defaults, evening: .default)
+        let doc = InvoiceDocument.build(number: "INV-001", issueDate: CivilDate("2026-10-19")!,
+                                        period: Periods.week(containing: CivilDate("2026-10-14")!),
+                                        settings: settings, client: client, shifts: [shift])
+        #expect(doc.total == 560) // client custom weekday rate applied to invoice
+        #expect(doc.dueDate.iso == "2026-11-02")
+        #expect(doc.payment == ["BSB: 062-000"])
+        #expect(doc.items(invoiceId: UUID()).first?.amount == 560)
+        #expect(doc.fileName == "INV-001 Jo 2026-10-12.pdf")
+    }
+}
